@@ -2929,13 +2929,13 @@ intValue preRun(string code, map<string, intValue> required_global = {}, map<str
 	}
 #pragma endregion
 	// Get my directory
-	size_t p = env_name.find_last_of('\\');
+	size_t p = env_name.find_last_of('/');
 	string env_dir;	// Directly add file name.
 	if (p <= 0) {
 		env_dir = "";
 	}
 	else {
-		env_dir = env_name.substr(0, p) + '\\';
+		env_dir = env_name.substr(0, p) + '/';
 	}
 	include_sources.insert(include_sources.begin(), env_dir);	// search at first
 	//bool bmain_fail = false;
